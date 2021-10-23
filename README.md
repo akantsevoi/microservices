@@ -1,3 +1,3 @@
 # microservices
 
-https://otus.ru/lessons/microservice-architecture
+For course: https://otus.ru/lessons/microservice-architecture
