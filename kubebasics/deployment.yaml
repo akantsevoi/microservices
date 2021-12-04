@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alex-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: alex-demo
+  template:
+    metadata:
+      labels:
+        app: alex-demo
+    spec:
+      containers:
+        - name: alex-de
+          image: akantsevoi/kuber1:1.0
+          ports:
+            - name: web-dep
+              containerPort: 8000
+          livenessProbe:
+            httpGet:
+              port: 8000
+              path: /health
+            initialDelaySeconds: 10
+            periodSeconds: 5

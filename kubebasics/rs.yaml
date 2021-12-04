@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-alex
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: alex-demo
+  template:
+    metadata:
+      labels:
+        app: alex-demo
+    spec:
+      containers:
+        - name: alex-demo
+          image: akantsevoi/kuber1:1.0
+          ports:
+            - containerPort: 8000
